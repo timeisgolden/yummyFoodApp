@@ -1,0 +1,2541 @@
+<ion-header class="bg_transparent">
+    <ion-toolbar>
+        <ion-buttons slot="start" mode="md">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>
+            <div class="title-inner d-flex">
+                <ion-icon class="zmdi zmdi-fullscreen ion-text-end end"></ion-icon>
+            </div>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content #contentElement fullscreen>
+    <div class="banner">
+        <div class="img_box center_img">
+            <img src="assets/images/foods/food_details.png" class="crop_img">
+        </div>
+        <div class="play_btn animate__animated animate__zoomIn wow" data-wow-duration="0.4s">
+            <ion-icon class="zmdi zmdi-play ion-text-center"></ion-icon>
+        </div>
+    </div>
+
+
+    <div id="content-inner" class="content-inner">
+        <div class="pullup"></div>
+
+        <div class="slides_nav d-flex" [class.disabled]="sliderOne.isEndSlide">
+            <ion-icon class="zmdi zmdi-arrow-left ion-text-center animate__animated animate__zoomIn wow" data-wow-duration="0.35s" (click)="slidePrev(sliderOne,slideWithNav)" [class.disabled]="sliderOne.isBeginningSlide"></ion-icon>
+            <!-- <h3 class="ion-text-center">{{text}}</h3> -->
+            <ion-icon class="zmdi zmdi-arrow-right ion-text-center end animate__animated animate__zoomIn wow" data-wow-duration="0.35s" (click)="slideNext(sliderOne,slideWithNav)" [class.disabled]="sliderOne.isEndSlide"></ion-icon>
+
+            <!--          This icon show when reach on the last slide-->
+            <ion-icon class="zmdi zmdi-check-all ion-text-center finish-cooking end animate__animated animate__zoomIn wow" data-wow-duration="0.35s" (click)="finish_cooking()"></ion-icon>
+        </div>
+
+        <ion-slides pager="true" [options]="slideOptions" #slideWithNav (ionSlideDidChange)="SlideDidChange(sliderOne,slideWithNav)">
+            <ion-slide>
+                <div class="slide_header ion-text-center">
+                    <div class="text-box">
+                        <h2 class="animate__animated animate__fadeInUp wow" data-wow-duration="0.35s">{{'step' | translate}} 1</h2>
+                    </div>
+                </div>
+
+                <ion-list lines="none">
+                    <h2> {{'ingredients' | translate}}</h2>
+                    <ion-item class="animate__animated animate__fadeInUp">
+                        <div class="item-inner d-flex">
+                            <div class="img_box">
+                                <img src="assets/images/Ingredients/ingredient3.png">
+                            </div>
+                            <div class="text_box">
+                                <h3 class="d-flex">
+                                    Mushrooms
+                                    <span class="end">9</span>
+                                </h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp">
+                        <div class="item-inner d-flex">
+                            <div class="img_box">
+                                <img src="assets/images/Ingredients/ingredient4.png">
+                            </div>
+                            <div class="text_box">
+                                <h3 class="d-flex">
+                                    Samll onion
+                                    <span class="end">1</span>
+                                </h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <div class="process">
+                        <h2> {{'process' | translate}}</h2>
+
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                    </div>
+                </ion-list>
+            </ion-slide>
+
+
+            <ion-slide>
+                <div class="slide_header ion-text-center">
+                    <div class="text-box">
+                        <h2 class="animate__animated animate__fadeInUp wow" data-wow-duration="0.35s">{{'step' | translate}} 2</h2>
+                    </div>
+                </div>
+
+                <ion-list lines="none">
+                    <h2> {{'ingredients' | translate}}</h2>
+                    <ion-item class="animate__animated animate__fadeInUp">
+                        <div class="item-inner d-flex">
+                            <div class="img_box">
+                                <img src="assets/images/Ingredients/ingredient1.png">
+                            </div>
+                            <div class="text_box">
+                                <h3 class="d-flex">
+                                    Clove garlic
+                                    <span class="end">1</span>
+                                </h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp">
+                        <div class="item-inner d-flex">
+                            <div class="img_box">
+                                <img src="assets/images/Ingredients/ingredient6.png">
+                            </div>
+                            <div class="text_box">
+                                <h3 class="d-flex">
+                                    Olive oil
+                                    <span class="end">1 tbsp</span>
+                                </h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <div class="process">
+                        <h2> {{'process' | translate}}</h2>
+
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                    </div>
+                </ion-list>
+            </ion-slide>
+
+
+            <ion-slide>
+                <div class="slide_header ion-text-center">
+                    <div class="text-box">
+                        <h2 class="animate__animated animate__fadeInUp wow" data-wow-duration="0.35s">{{'step' | translate}} 3</h2>
+                    </div>
+                </div>
+
+                <ion-list lines="none">
+                    <h2> {{'ingredients' | translate}}</h2>
+                    <ion-item class="animate__animated animate__fadeInUp">
+                        <div class="item-inner d-flex">
+                            <div class="img_box">
+                                <img src="assets/images/Ingredients/ingredient8.png">
+                            </div>
+                            <div class="text_box">
+                                <h3 class="d-flex">
+                                    Cup cream
+                                    <span class="end">1/2</span>
+                                </h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp">
+                        <div class="item-inner d-flex">
+                            <div class="img_box">
+                                <img src="assets/images/Ingredients/ingredient5.png">
+                            </div>
+                            <div class="text_box">
+                                <h3 class="d-flex">
+                                    Soy sauce
+                                    <span class="end">1 tbsp</span>
+                                </h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <div class="process">
+                        <h2> {{'process' | translate}}</h2>
+
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                    </div>
+                </ion-list>
+            </ion-slide>
+
+
+
+            <ion-slide>
+                <div class="slide_header ion-text-center">
+                    <div class="text-box">
+                        <h2 class="animate__animated animate__fadeInUp wow" data-wow-duration="0.35s">{{'step' | translate}} 4</h2>
+                    </div>
+                </div>
+
+                <ion-list lines="none">
+                    <h2> {{'ingredients' | translate}}</h2>
+                    <ion-item class="animate__animated animate__fadeInUp">
+                        <div class="item-inner d-flex">
+                            <div class="img_box">
+                                <img src="assets/images/Ingredients/ingredient2.png">
+                            </div>
+                            <div class="text_box">
+                                <h3 class="d-flex">
+                                    Parsley (fresh)
+                                    <span class="end">1 tbsp</span>
+                                </h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp">
+                        <div class="item-inner d-flex">
+                            <div class="img_box">
+                                <img src="assets/images/Ingredients/ingredient7.png">
+                            </div>
+                            <div class="text_box">
+                                <h3 class="d-flex">
+                                    Salt & Pepper
+                                    <span class="end">Test</span>
+                                </h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <div class="process">
+                        <h2> {{'process' | translate}}</h2>
+
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                    </div>
+                </ion-list>
+            </ion-slide>
+
+
+
+            <ion-slide>
+                <div class="slide_header ion-text-center">
+                    <div class="text-box">
+                        <h2 class="animate__animated animate__fadeInUp wow" data-wow-duration="0.35s">{{'step' | translate}} 5</h2>
+                    </div>
+                </div>
+
+                <ion-list lines="none">
+                    <h2> {{'ingredients' | translate}}</h2>
+
+                    <ion-item class="animate__animated animate__fadeInUp">
+                        <div class="item-inner d-flex">
+                            <div class="img_box">
+                                <img src="assets/images/Ingredients/ingredient7.png">
+                            </div>
+                            <div class="text_box">
+                                <h3 class="d-flex">
+                                    Salt & Pepper
+                                    <span class="end">Test</span>
+                                </h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <div class="process">
+                        <h2> {{'process' | translate}}</h2>
+
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                    </div>
+                </ion-list>
+            </ion-slide>
+
+
+            <ion-slide>
+                <div class="slide_header ion-text-center">
+                    <div class="text-box">
+                        <h2 class="animate__animated animate__fadeInUp wow" data-wow-duration="0.35s">{{'step' | translate}} 6</h2>
+                    </div>
+                </div>
+
+                <ion-list lines="none">
+                    <!--
+                    <h2> {{'ingredients' | translate}}</h2>
+
+                    <ion-item class="animate__animated animate__fadeInUp">
+                        <div class="item-inner d-flex">
+                            <div class="img_box">
+                                <img src="assets/images/Ingredients/ingredient7.png">
+                            </div>
+                            <div class="text_box">
+                                <h3 class="d-flex">
+                                    Salt & Pepper
+                                    <span class="end">Test</span>
+                                </h3>
+                            </div>
+                        </div>
+                    </ion-item>
+-->
+
+                    <div class="process">
+                        <h2> {{'process' | translate}}</h2>
+
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                    </div>
+                </ion-list>
+            </ion-slide>
+
+
+
+            <ion-slide>
+                <div class="slide_header ion-text-center">
+                    <div class="text-box">
+                        <h2 class="animate__animated animate__fadeInUp wow" data-wow-duration="0.35s">{{'step' | translate}} 7</h2>
+                    </div>
+                </div>
+
+                <ion-list lines="none">
+                    <!--
+                    <h2> {{'ingredients' | translate}}</h2>
+
+                    <ion-item class="animate__animated animate__fadeInUp">
+                        <div class="item-inner d-flex">
+                            <div class="img_box">
+                                <img src="assets/images/Ingredients/ingredient7.png">
+                            </div>
+                            <div class="text_box">
+                                <h3 class="d-flex">
+                                    Salt & Pepper
+                                    <span class="end">Test</span>
+                                </h3>
+                            </div>
+                        </div>
+                    </ion-item>
+-->
+
+                    <div class="process">
+                        <h2> {{'process' | translate}}</h2>
+
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item-inner">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna aliquam, pellentesque libero et, maximus nunc. Ut sagittis dui in feugiat lacinia. In hac habitasse platea dictumst.
+                                </p>
+                            </div>
+                        </ion-item>
+                    </div>
+                </ion-list>
+            </ion-slide>
+        </ion-slides>
+
+    </div>
+</ion-content>

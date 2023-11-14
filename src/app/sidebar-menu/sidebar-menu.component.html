@@ -1,0 +1,186 @@
+<ion-app [dir]="rtlSide">
+  <ion-split-pane contentId="main-content">
+    <ion-menu *ngIf="showSideMenu" contentId="main-content" [side]="rtlSideMenu" type="reveal">
+      <ion-header class="bg_transparent">
+        <!--
+              <ion-toolbar>
+                  <ion-title>
+                      <div class="title-inner d-flex">
+                          <ion-menu-toggle auto-hide="false">
+                              <ion-icon class="zmdi zmdi-close"></ion-icon>
+                          </ion-menu-toggle>
+
+                          <div class="buy_this_app end" *ngIf="config.demoMode" (click)="buyappalert()">
+                              <ion-menu-toggle auto-hide="false">
+                                  <h2> {{"buy_this_app" | translate}} </h2>
+                              </ion-menu-toggle>
+                          </div>
+                      </div>
+                  </ion-title>
+              </ion-toolbar>
+-->
+
+        <div class="profile">
+          <div class="img_box center_img">
+            <img src="assets/images/profile.png" class="crop_img">
+          </div>
+          <h2>Okra & Yam</h2>
+        </div>
+      </ion-header>
+
+      <ion-content>
+        <ion-list lines="none">
+          <ion-item class="animate__animated animate__fadeInUp" [ngClass]="activePage == 1 ? 'active' : ''"
+            (click)="home()">
+            <div class="item-inner">
+              <ion-menu-toggle auto-hide="false">
+                <div class="menu-toggle-inner d-flex">
+                  <i class="material-icons-outlined  ion-text-start ">
+                    home
+                  </i>
+                  <h2>{{'recipes' | translate}}</h2>
+                </div>
+              </ion-menu-toggle>
+            </div>
+
+
+          </ion-item>
+
+          <ion-item *ngIf="user.user.role == 'chef' " class="animate__animated animate__fadeInUp wow"
+            [ngClass]="activePage == 2 ? 'active' : ''" (click)="chef()">
+            <div class="item-inner">
+              <ion-menu-toggle auto-hide="false">
+                <div class="menu-toggle-inner d-flex">
+                  <i class="material-icons-outlined  ion-text-start ">
+                    add
+                  </i>
+                  <h2>{{'Add Recipe' | translate}}</h2>
+                </div>
+              </ion-menu-toggle>
+            </div>
+          </ion-item>
+
+          <ion-item class="animate__animated animate__fadeInUp wow" [ngClass]="activePage == 3 ? 'active' : ''"
+            (click)="grocery()">
+            <div class="item-inner">
+              <ion-menu-toggle auto-hide="false">
+                <div class="menu-toggle-inner d-flex">
+                  <i class="material-icons-outlined  ion-text-start ">
+                    inventory
+                  </i>
+                  <h2>{{'grocery' | translate}}</h2>
+                </div>
+              </ion-menu-toggle>
+            </div>
+          </ion-item>
+
+          <ion-item class="animate__animated animate__fadeInUp wow" [ngClass]="activePage == 4 ? 'active' : ''"
+            (click)="profile()">
+            <div class="item-inner">
+              <ion-menu-toggle auto-hide="false">
+                <div class="menu-toggle-inner d-flex">
+                  <i class="material-icons-outlined  ion-text-start ">
+                    perm_identity
+                  </i>
+                  <h2>{{'my_profile' | translate}}</h2>
+                </div>
+              </ion-menu-toggle>
+            </div>
+          </ion-item>
+
+          <ion-item class="animate__animated animate__fadeInUp wow" [ngClass]="activePage == 5 ? 'active' : ''"
+            (click)="contact_us()">
+            <div class="item-inner">
+              <ion-menu-toggle auto-hide="false">
+                <div class="menu-toggle-inner d-flex">
+                  <i class="material-icons-outlined  ion-text-start ">
+                    error_outline
+                  </i>
+                  <h2>{{'help_support' | translate}}</h2>
+                </div>
+              </ion-menu-toggle>
+            </div>
+          </ion-item>
+
+          <ion-item class="animate__animated animate__fadeInUp wow" [ngClass]="activePage == 6 ? 'active' : ''"
+            (click)="terms_conditions()">
+            <div class="item-inner">
+              <ion-menu-toggle auto-hide="false">
+                <div class="menu-toggle-inner d-flex">
+                  <i class="material-icons-outlined  ion-text-start ">
+                    verified_user
+                  </i>
+                  <h2>{{'terms_conditaions' | translate}}</h2>
+                </div>
+              </ion-menu-toggle>
+            </div>
+          </ion-item>
+
+          <ion-item class="animate__animated animate__fadeInUp wow" [ngClass]="activePage == 7 ? 'active' : ''"
+            (click)="language()">
+            <div class="item-inner">
+              <ion-menu-toggle auto-hide="false">
+                <div class="menu-toggle-inner d-flex">
+                  <i class="material-icons-outlined  ion-text-start ">
+                    translate
+                  </i>
+                  <h2>{{'change_language' | translate}}</h2>
+                </div>
+              </ion-menu-toggle>
+            </div>
+          </ion-item>
+
+          <ion-item class="animate__animated animate__fadeInUp wow">
+            <div class="item-inner">
+              <div class="menu-toggle-inner d-flex" style="width: 100%">
+                <i class="material-icons-outlined  ion-text-start  light-theme">
+                  brightness_3
+                </i>
+
+                <i class="material-icons-outlined  ion-text-start  dark-theme">
+                  brightness_7
+                </i>
+                <h2>{{'change_theme' | translate}}</h2>
+
+                <ion-toggle mode="ios" class="end" (ionChange)="onDarkMode($event)"></ion-toggle>
+              </div>
+            </div>
+          </ion-item>
+
+
+          <ion-item class="animate__animated animate__fadeInUp wow" *ngIf="config.demoMode" (click)="buyappalert()">
+            <div class="item-inner">
+              <ion-menu-toggle auto-hide="false">
+                <div class="menu-toggle-inner d-flex">
+                  <i class="material-icons-outlined  ion-text-start ">
+                    shopping_cart
+                  </i>
+                  <h2>{{'buy_this_app' | translate}}</h2>
+                </div>
+              </ion-menu-toggle>
+            </div>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+
+      <ion-footer class="ion-no-border animate__animated animate__fadeInUp wow" data-wow-duration="0.5s"
+        (click)="logout()">
+        <ion-list lines="none">
+          <ion-item class="animate__animated animate__fadeInUp wow">
+            <div class="item-inner">
+              <ion-menu-toggle auto-hide="false">
+                <div class="menu-toggle-inner d-flex">
+                  <i class="material-icons-outlined  ion-text-start ">
+                    logout
+                  </i>
+                  <h2>{{'logout' | translate}}</h2>
+                </div>
+              </ion-menu-toggle>
+            </div>
+          </ion-item>
+        </ion-list>
+      </ion-footer>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

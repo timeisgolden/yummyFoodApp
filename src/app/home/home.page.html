@@ -1,0 +1,267 @@
+<ion-header style="position: relative" [class.active]="showToolbar">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button (click)="incrementAds()" icon="">
+                <ion-icon class="zmdi zmdi-sort-amount-desc"></ion-icon>
+            </ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            <div style="flex-direction: column;" class="title-inner d-flex">
+                <div class="text_box">
+                    <h2 class="d-flex animate__animated animate__fadeInUp wow" data-wow-duration="0.3s">
+                        {{'recipes' | translate}}
+
+                    </h2>
+
+                </div>
+
+                <!-- <span *ngIf="type_of_food == 'Breakfast'">{{'Top_Breakfast_Recipes' |
+                    translate}}</span>
+                <span *ngIf="type_of_food == 'Lunch'">{{'Top_Lunch_Recipes' |
+                    translate}}</span>
+                <span *ngIf="type_of_food == 'Dinner'">{{'Top_Dinner_Recipes' |
+                    translate}}</span>
+                <span *ngIf="type_of_food == 'Dessert'">{{'Top_Dessert_Recipes' |
+                    translate}}</span>
+                <span *ngIf="type_of_food == 'Beverages'">{{'Top_Beverages_Recipes' |
+                    translate}}</span> -->
+                <!-- <ion-icon class="zmdi zmdi-notifications-none end ion-text-end" (click)="notification()"></ion-icon> -->
+            </div>
+        </ion-title>
+    </ion-toolbar>
+
+    <div style="padding-bottom: 0px;" class="header_banner">
+
+        <ion-searchbar show-clear-button="focus" search-icon=“undefined” color="primary" placeholder="Search Recipes"
+            [(ngModel)]="searchQuery" (ionChange)="filterRecipes()" (ionClear)="clear()"
+            (ionBlur)="handleSearchBarBlur()"></ion-searchbar>
+        <div *ngIf="filteredRecipes && filteredRecipes.length > 0" class="search-results"
+            (click)="handleSearchResultsClick($event)">
+            <ion-list>
+                <ion-item *ngFor="let recipe of filteredRecipes" (click)="item_info(recipe)">
+                    {{ recipe.name }}
+                </ion-item>
+            </ion-list>
+        </div>
+        <!-- <div class="search_box d-flex animate__animated animate__fadeInUp wow" data-wow-duration="0.4s"> -->
+        <!-- <ion-icon class="zmdi zmdi-search ion-text-start" (click)="search()"></ion-icon> -->
+        <!--            <ion-searchbar class="ion-no-padding" searchIcon="hide" placeholder="{{'search_recipes' | translate}}"></ion-searchbar>-->
+        <!-- <h4 (click)="search()">{{'search_recipes' | translate}}</h4> -->
+        <!-- <ion-icon class="zmdi zmdi-tune ion-text-end end" (click)="filter()"></ion-icon> -->
+        <!-- </div> -->
+    </div>
+    <div class="type_of_food fixed-top">
+        <h2>
+            {{'choose_type_of_food' | translate}}
+        </h2>
+        <ion-segment mode="ios" [(ngModel)]="type_of_food" scrollable>
+            <ion-segment-button class="animate__animated animate__zoomIn" mode="ios" value="Breakfast">
+                <div class="img_box" style="height: 85px">
+                    <img style="height: 45px;" src="assets/images/types_of_food/brekky.png">
+                </div>
+                <h3>{{'breakfast' | translate}}</h3>
+            </ion-segment-button>
+
+            <ion-segment-button class="animate__animated animate__zoomIn" mode="ios" value="Appetizer">
+                <div class="img_box">
+                    <img src="assets/images/types_of_food/Italian.png">
+                </div>
+                <h3>{{'apps' | translate}}</h3>
+            </ion-segment-button>
+
+            <ion-segment-button class="animate__animated animate__zoomIn" mode="ios" value="Dinner">
+                <div class="img_box">
+                    <img src="assets/images/types_of_food/Chinese.png">
+                </div>
+                <h3>{{'dinner' | translate}}</h3>
+            </ion-segment-button>
+
+            <ion-segment-button class="animate__animated animate__zoomIn" mode="ios" value="Dessert">
+                <div class="img_box" style="height:5.3125rem">
+                    <img style="height:3rem;" src="assets/images/types_of_food/dessert.png">
+                </div>
+                <h3>{{'dessert' | translate}}</h3>
+            </ion-segment-button>
+
+            <ion-segment-button class="animate__animated animate__zoomIn" mode="ios" value="Beverages">
+                <div class="img_box" style="height:5.3125rem">
+                    <img style="height:3rem;" src="assets/images/types_of_food/milkshake.png">
+                </div>
+                <h3>{{'beverages' | translate}}</h3>
+            </ion-segment-button>
+        </ion-segment>
+    </div>
+</ion-header>
+
+
+<ion-content class="content-container">
+
+
+
+
+
+    <div class="item_container" [ngSwitch]="type_of_food">
+        <div class="item_list" *ngSwitchCase="'Breakfast'">
+            <h2 class="animate__animated animate__fadeInUp wow" data-wow-duration="0.4s">{{'Top_Breakfast_Recipes' |
+                translate}}</h2>
+            <ion-row>
+                <ng-container *ngFor="let recipe of recipes['Breakfast']; let i = index">
+                    <ion-col size="6" size-md="3" size-lg="3" class="animate__animated animate__zoomIn"
+                        (click)="item_info(recipe)">
+                        <div class="item">
+                            <div class="img_box center_img">
+                                <img src="{{recipe.pics[0]}}" class="crop_img">
+                            </div>
+                            <h3>{{recipe.name}}</h3>
+                            <h4>{{recipe.ethnicity}}</h4>
+                        </div>
+                    </ion-col>
+
+                    <!-- Add a banner that takes up a whole row after every 8th item (i is 0-based index) -->
+                    <ion-row *ngIf="(i + 1) % 8 === 0 && adsOn">
+                        <ion-col size="12">
+                            <div class="banner">
+                                <img (click)="open(bannerImages[currentBannerImageUrl].link)"
+                                    [src]="bannerImages[currentBannerImageUrl].name">
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </ng-container>
+            </ion-row>
+        </div>
+
+
+        <div class="item_list" *ngSwitchCase="'Appetizer'">
+            <h2 class="animate__animated animate__fadeInUp wow" data-wow-duration="0.4s">{{'Top_Apps_Recipes' |
+                translate}}</h2>
+            <ion-row>
+                <ng-container *ngFor="let recipe of recipes['Appetizer']; let i = index">
+                    <ion-col size="6" size-md="3" size-lg="3" class="animate__animated animate__zoomIn"
+                        (click)="item_info(recipe)">
+                        <div class="item">
+                            <div class="img_box center_img">
+                                <img src="{{recipe.pics[0]}}" class="crop_img">
+                            </div>
+                            <h3>{{recipe.name}}</h3>
+                            <h4>{{recipe.ethnicity}}</h4>
+                        </div>
+                    </ion-col>
+
+                    <!-- Add a banner that takes up a whole row after every 8th item (i is 0-based index) -->
+                    <ion-row *ngIf="(i + 1) % 8 === 0 && adsOn">
+                        <ion-col size="12">
+                            <div class="banner">
+                                <img (click)="open(bannerImages[currentBannerImageUrl].link)"
+                                    [src]="bannerImages[currentBannerImageUrl].name">
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </ng-container>
+            </ion-row>
+        </div>
+
+
+        <div class="item_list" *ngSwitchCase="'Dinner'">
+            <h2 class="animate__animated animate__fadeInUp wow" data-wow-duration="0.4s">{{'Top_Dinner_Recipes' |
+                translate}}</h2>
+            <ion-row>
+                <ng-container *ngFor="let recipe of recipes['Dinner']; let i = index">
+                    <ion-col size="6" size-md="3" size-lg="3" class="animate__animated animate__zoomIn"
+                        (click)="item_info(recipe)">
+                        <div class="item">
+                            <div class="img_box center_img">
+                                <img src="{{recipe.pics[0]}}" class="crop_img">
+                            </div>
+                            <h3>{{recipe.name}}</h3>
+                            <h4>{{recipe.ethnicity}}</h4>
+                        </div>
+                    </ion-col>
+
+                    <!-- Add a banner that takes up a whole row after every 8th item (i is 0-based index) -->
+                    <ion-row *ngIf="(i + 1) % 8 === 0 && adsOn">
+                        <ion-col size="12">
+                            <div class="banner">
+                                <img (click)="open(bannerImages[currentBannerImageUrl].link)"
+                                    [src]="bannerImages[currentBannerImageUrl].name">
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </ng-container>
+            </ion-row>
+        </div>
+
+
+        <div class="item_list" *ngSwitchCase="'Dessert'">
+            <h2 class="animate__animated animate__fadeInUp wow" data-wow-duration="0.4s">{{'Top_Dessert_Recipes' |
+                translate}}</h2>
+            <ion-row>
+                <ng-container *ngFor="let recipe of recipes['Dessert']; let i = index">
+                    <ion-col size="6" size-md="3" size-lg="3" class="animate__animated animate__zoomIn"
+                        (click)="item_info(recipe)">
+                        <div class="item">
+                            <div class="img_box center_img">
+                                <img src="{{recipe.pics[0]}}" class="crop_img">
+                            </div>
+                            <h3>{{recipe.name}}</h3>
+                            <h4>{{recipe.ethnicity}}</h4>
+                        </div>
+                    </ion-col>
+
+                    <!-- Add a banner that takes up a whole row after every 8th item (i is 0-based index) -->
+                    <ion-row *ngIf="(i + 1) % 8 === 0 && adsOn">
+                        <ion-col size="12">
+                            <div class="banner">
+                                <img (click)="open(bannerImages[currentBannerImageUrl].link)"
+                                    [src]="bannerImages[currentBannerImageUrl].name">
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </ng-container>
+            </ion-row>
+        </div>
+
+
+        <div class="item_list" *ngSwitchCase="'Beverages'">
+            <h2 class="animate__animated animate__fadeInUp wow" data-wow-duration="0.4s">{{'Top_Beverages_Recipes' |
+                translate}}</h2>
+            <ion-row>
+                <ng-container *ngFor="let recipe of recipes['Beverages']; let i = index">
+                    <ion-col size="6" size-md="3" size-lg="3" class="animate__animated animate__zoomIn"
+                        (click)="item_info(recipe)">
+                        <div class="item">
+                            <div class="img_box center_img">
+                                <img src="{{recipe.pics[0]}}" class="crop_img">
+                            </div>
+                            <h3>{{recipe.name}}</h3>
+                            <h4>{{recipe.ethnicity}}</h4>
+                        </div>
+                    </ion-col>
+
+                    <!-- Add a banner that takes up a whole row after every 8th item (i is 0-based index) -->
+                    <ion-row *ngIf="(i + 1) % 8 === 0 && adsOn">
+                        <ion-col size="12">
+                            <div class="banner">
+                                <img (click)="open(bannerImages[currentBannerImageUrl].link)"
+                                    [src]="bannerImages[currentBannerImageUrl].name">
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </ng-container>
+            </ion-row>
+        </div>
+
+
+
+    </div>
+</ion-content>
+
+<ion-footer class="ion-no-border animate__animated animate__fadeInUp wow" data-wow-duration="0.9s"
+    *ngIf="config.demoMode">
+    <div class="developed_by d-flex" (click)="developed_by()">
+        <h2>{{"developed_by" | translate}}</h2>
+        <div class="img_box ion-text-end end">
+            <img src="assets/images/opus_labs.png" class="end">
+            <img src="assets/images/opus_logo_light.png" class="end">
+        </div>
+    </div>
+</ion-footer>

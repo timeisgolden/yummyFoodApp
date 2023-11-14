@@ -1,0 +1,36 @@
+<!-- picture-gallery.component.html -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Picture Gallery</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeGallery()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" *ngFor="let pic of pics">
+        <div class="img_box center_img">
+          <img [src]="pic" class="crop_img">
+        </div>
+      </div>
+    </div>
+
+    <!-- Add pagination if desired -->
+    <div class="swiper-pagination"></div>
+  </div>
+
+
+  <!-- <ion-slides>
+    <ion-slide *ngFor="let pic of pics">
+      <div class="img_box center_img">
+        <img [src]="pic" class="crop_img">
+      </div>
+    </ion-slide>
+  </ion-slides> -->
+</ion-content>

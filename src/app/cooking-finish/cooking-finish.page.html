@@ -1,0 +1,35 @@
+<ion-header class="bg_transparent">
+    <ion-toolbar>
+        <ion-title></ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+    <div class="take_a_photo ion-text-center animate__animated animate__zoomIn wow" data-wow-duration="0.3s">
+        <ion-icon class="zmdi zmdi-camera"></ion-icon>
+        <h2>{{'take_a_photo' | translate}}</h2>
+    </div>
+</ion-content>
+
+<ion-footer class="ion-no-border ion-text-center">
+    <h2 class="animate__animated animate__fadeInUp wow" data-wow-duration="0.35s">{{'congrats' | translate}}!</h2>
+    <p>
+        <span class="animate__animated animate__fadeInUp wow" data-wow-duration="0.4s">{{'tell_other_users_and_your_friends_how' | translate}}</span>
+        <span class="animate__animated animate__fadeInUp wow" data-wow-duration="0.45s">{{'delicious_the_dish_turned_out' | translate}}.</span>
+    </p>
+    <div class="social_icons d-flex animate__animated animate__fadeInUp wow" data-wow-duration="0.5s">
+        <div class="icon_box">
+            <img src="assets/images/Facebook.png">
+        </div>
+        <div class="icon_box">
+            <img src="assets/images/Whatsapp.png">
+        </div>
+        <div class="icon_box">
+            <img src="assets/images/Twitter.png">
+        </div>
+        <div class="icon_box">
+            <img src="assets/images/Instagram.png">
+        </div>
+    </div>
+    <ion-button size="large" expand="round" fill="clear" class="btn animate__animated animate__fadeInUp wow" data-wow-duration="0.55s" (click)="home()">{{'back_to_home' | translate}}</ion-button>
+</ion-footer>

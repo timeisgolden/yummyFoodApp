@@ -1,0 +1,118 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start" mode="md">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title></ion-title>
+    </ion-toolbar>
+
+    <div class="header_banner">
+        <div class="text_box">
+            <h2 class="d-flex animate__animated animate__fadeInUp wow" data-wow-duration="0.3s">
+                {{'search' | translate}}
+            </h2>
+        </div>
+        <div class="search_box d-flex animate__animated animate__fadeInUp wow" data-wow-duration="0.4s">
+            <ion-icon class="zmdi zmdi-search ion-text-start"></ion-icon>
+            <ion-searchbar class="ion-no-padding" searchIcon="hide" placeholder="{{'search_recipes' | translate}}"></ion-searchbar>
+            <ion-icon class="zmdi zmdi-tune ion-text-end end" (click)="filter()"></ion-icon>
+        </div>
+    </div>
+</ion-header>
+
+<ion-content fullscreen>
+    <div class="recent_search">
+        <h2 class="d-flex animate__animated animate__fadeInUp wow" data-wow-duration="0.3s">
+            {{'recent_search' | translate}}
+        </h2>
+
+        <h3 class="animate__animated animate__fadeInUp d-flex" (click)="item_info()">
+            <ion-icon class="zmdi zmdi-time ion-text-start"></ion-icon> Vegan</h3>
+        <h3 class="animate__animated animate__fadeInUp d-flex" (click)="item_info()">
+            <ion-icon class="zmdi zmdi-time ion-text-start"></ion-icon> Gulten Free</h3>
+        <h3 class="animate__animated animate__fadeInUp d-flex" (click)="item_info()">
+            <ion-icon class="zmdi zmdi-time ion-text-start"></ion-icon> Low Fat</h3>
+        <h3 class="animate__animated animate__fadeInUp d-flex" (click)="item_info()">
+            <ion-icon class="zmdi zmdi-time ion-text-start"></ion-icon> Fast Cooking</h3>
+        <h3 class="animate__animated animate__fadeInUp d-flex" (click)="item_info()">
+            <ion-icon class="zmdi zmdi-time ion-text-start"></ion-icon> Vegetarian</h3>
+    </div>
+
+    <div class="quick_search">
+        <h2 class="d-flex animate__animated animate__fadeInUp wow" data-wow-duration="0.3s">
+            {{'quick_search' | translate}}
+        </h2>
+
+        <ion-row>
+            <ion-col size="4" class="animate__animated animate__zoomIn" (click)="item_info()">
+                <div class="item">
+                    <div class="img_box">
+                        <img src="assets/images/quick_search/img_3.png">
+                    </div>
+                    <h3>Pasta</h3>
+                </div>
+            </ion-col>
+
+            <ion-col size="4" class="animate__animated animate__zoomIn" (click)="item_info()">
+                <div class="item">
+                    <div class="img_box">
+                        <img src="assets/images/quick_search/img_4.png">
+                    </div>
+                    <h3>Soups</h3>
+                </div>
+            </ion-col>
+
+            <ion-col size="4" class="animate__animated animate__zoomIn" (click)="item_info()">
+                <div class="item">
+                    <div class="img_box">
+                        <img src="assets/images/quick_search/img_2.png">
+                    </div>
+                    <h3>Lunch</h3>
+                </div>
+            </ion-col>
+
+            <ion-col size="4" class="animate__animated animate__zoomIn" (click)="item_info()">
+                <div class="item">
+                    <div class="img_box">
+                        <img src="assets/images/quick_search/img_1.png">
+                    </div>
+                    <h3>Brealfast</h3>
+                </div>
+            </ion-col>
+
+
+            <ion-col size="4" class="animate__animated animate__zoomIn" (click)="item_info()">
+                <div class="item">
+                    <div class="img_box">
+                        <img src="assets/images/quick_search/img_1.png">
+                    </div>
+                    <h3>Vegan</h3>
+                </div>
+            </ion-col>
+
+            <ion-col size="4" class="animate__animated animate__zoomIn" (click)="item_info()">
+                <div class="item">
+                    <div class="img_box">
+                        <img src="assets/images/quick_search/img_3.png">
+                    </div>
+                    <h3>Pasta</h3>
+                </div>
+            </ion-col>
+        </ion-row>
+    </div>
+
+
+    <div class="popular_tags">
+        <h2 class="d-flex animate__animated animate__fadeInUp wow" data-wow-duration="0.3s">
+            {{'popular_tags' | translate}}
+        </h2>
+
+        <div class="teags d-flex">
+            <h3 class="animate__animated animate__zoomIn" (click)="item_info()">Vegan</h3>
+            <h3 class="animate__animated animate__zoomIn" (click)="item_info()">Gulten Free</h3>
+            <h3 class="animate__animated animate__zoomIn" (click)="item_info()">Low Fat</h3>
+            <h3 class="animate__animated animate__zoomIn" (click)="item_info()">Fast Cooking</h3>
+            <h3 class="animate__animated animate__zoomIn" (click)="item_info()">Vegetarian</h3>
+        </div>
+    </div>
+</ion-content>

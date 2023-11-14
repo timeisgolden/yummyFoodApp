@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start" mode="md">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title></ion-title>
+    </ion-toolbar>
+
+    <div class="header_banner">
+        <div class="text_box">
+            <h2 class="d-flex animate__animated animate__fadeInUp wow" data-wow-duration="0.3s">{{'what_s_your_number' | translate}}?</h2>
+            <h3 class="animate__animated animate__fadeInUp wow" data-wow-duration="0.35s">{{'we_ll_text_a_code_to_verify_your_phone' | translate}}</h3>
+        </div>
+    </div>
+</ion-header>
+
+<ion-content fullscreen>
+    <div class="form">
+        <ion-list lines="none">
+            <ion-item lines="none" class="animate__animated animate__fadeInUp wow" data-wow-duration="0.4s"> 
+                <ion-label position="floating">{{'select_contary' | translate}}</ion-label>
+                <ion-select mode="md" [(ngModel)]="select_contary">
+                    <ion-select-option value="Afghanistan">Afghanistan</ion-select-option>
+                    <ion-select-option value="Albania">Albania</ion-select-option>
+                    <ion-select-option value="Algeria">Algeria</ion-select-option>
+                    <ion-select-option value="Andorra">Andorra</ion-select-option>
+                    <ion-select-option value="Angola">Angola</ion-select-option>
+                    <ion-select-option value="Bhutan">Bhutan</ion-select-option>
+                    <ion-select-option value="Botswana">Botswana</ion-select-option>
+                    <ion-select-option value="Brazil">Brazil</ion-select-option>
+                    <ion-select-option value="Brunei_Darussalam">Brunei Darussalam</ion-select-option>
+                    <ion-select-option value="Burkina Faso">Burkina Faso</ion-select-option>
+                    <ion-select-option value="Chad">Chad</ion-select-option>
+                    <ion-select-option value="China">China</ion-select-option>
+                    <ion-select-option value="Colombia">Colombia</ion-select-option>
+                    <ion-select-option value="Croatia">Croatia</ion-select-option>
+                    <ion-select-option value="Cuba">Cuba</ion-select-option>
+                    <ion-select-option value="Cyprus">Cyprus</ion-select-option>
+                    <ion-select-option value="india">India</ion-select-option>
+                </ion-select>
+                <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>
+            </ion-item>
+
+            <ion-item lines="none" class="animate__animated animate__fadeInUp wow" data-wow-duration="0.45s">
+                <ion-label position="floating">{{'phone_number' | translate}}</ion-label>
+                <ion-input mode="md" type="tel" value="+1 987 654 3210"></ion-input>
+            </ion-item> 
+        </ion-list>
+    </div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+    <ion-button size="large" class="btn animate__animated animate__fadeInUp wow" data-wow-duration="0.5s" expand="round" (click)="create_account()">{{'continue' | translate}}</ion-button>
+</ion-footer>

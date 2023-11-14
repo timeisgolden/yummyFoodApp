@@ -1,0 +1,57 @@
+<form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>Name:</label>
+    <input type="text" formControlName="name" required>
+  </div>
+  <div>
+    <label>Ethnicity:</label>
+    <input type="text" formControlName="ethnicity" required>
+  </div>
+  <div>
+    <label>Category:</label>
+    <input type="text" formControlName="category" required>
+  </div>
+  <div>
+    <label>Time:</label>
+    <input type="number" formControlName="time" required>
+  </div>
+  <div>
+    <label>Servings:</label>
+    <input type="number" formControlName="servings" required>
+  </div>
+
+  <div formArrayName="ingredients">
+    <div *ngFor="let ingredient of recipeForm.get('ingredients').controls; let i = index">
+      <div [formGroup]="ingredient">
+        <input type="text" formControlName="name" placeholder="Ingredient Name" required>
+        <input type="text" formControlName="amount" placeholder="Amount" required>
+        <input type="text" formControlName="icon" placeholder="Icon (Optional)">
+        <button type="button" (click)="removeIngredient(i)">Remove</button>
+      </div>
+    </div>
+    <button type="button" (click)="addIngredient()">Add Ingredient</button>
+  </div>
+
+  <div formArrayName="pics">
+    <div *ngFor="let url of mediaUrls; let i = index">
+      <img [src]="url" width="100" height="100" *ngIf="isImage(url)">
+      <video [src]="url" controls *ngIf="isVideo(url)"></video>
+      <button type="button" (click)="removeMedia(i)">Remove</button>
+    </div>
+  </div>
+  <input type="file" accept="image/*, video/*" (change)="onFileChange($event)" multiple>
+  <button type="button" (click)="uploadMedia()">Upload Media</button>
+
+  <div formArrayName="directions">
+    <div *ngFor="let direction of recipeForm.get('directions').controls; let i = index">
+      <div [formGroup]="direction">
+        <input type="text" formControlName="description" placeholder="Description" required>
+        <input type="text" formControlName="time" placeholder="Time" required>
+        <button type="button" (click)="removeDirection(i)">Remove</button>
+      </div>
+    </div>
+    <button type="button" (click)="addDirection()">Add Direction</button>
+  </div>
+
+  <button type="submit" [disabled]="recipeForm.invalid">Submit</button>
+</form>

@@ -1,0 +1,50 @@
+<ion-header class="bg_transparent">
+    <ion-toolbar>
+        <ion-buttons slot="start" mode="md">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content #contentElement fullscreen>
+    <div class="banner">
+        <div class="img_box center_img">
+            <img src="{{groceryList.recipe.pics[0]}}" class="crop_img">
+        </div>
+    </div>
+
+    <div id="content-inner" class="content-inner">
+        <div class="pullup"></div>
+        <div class="content_header ion-text-center">
+            <div class="text-box">
+                <h2 class="animate__animated animate__fadeInUp wow" data-wow-duration="0.35s">
+                    {{groceryList.recipe.name}}</h2>
+                <h3 class="d-flex animate__animated animate__fadeInUp wow" data-wow-duration="0.4s">
+                    {{groceryList.needed.length}}/{{groceryList.recipe.ingredients.length}} {{'ingredients' |
+                    translate}}
+                </h3>
+
+            </div>
+        </div>
+
+        <ion-list lines="none">
+            <h2 class="d-flex"> {{'ingredients' | translate}} <span class="end">{{'select_all' | translate}}</span></h2>
+            <ion-item *ngFor="let item of groceryList.recipe.ingredients" class="animate__animated animate__fadeInUp">
+                <div class="item-inner d-flex">
+                    <div class="img_box">
+                        <ion-checkbox [(ngModel)]="item.checked"></ion-checkbox>
+                    </div>
+                    <div class="text_box">
+                        <h3 class="d-flex">
+                            <span class="text">{{item.name}}</span>
+                            <span class="end">{{item.amount}}</span>
+                        </h3>
+                    </div>
+                </div>
+            </ion-item>
+        </ion-list>
+
+        <ion-button size="large" class="btn animate__animated animate__fadeInUp wow" data-wow-duration="0.5s"
+            expand="round" (click)="done()">{{'done' | translate}} </ion-button>
+    </div>
+</ion-content>

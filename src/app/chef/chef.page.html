@@ -1,0 +1,96 @@
+<ion-content>
+  <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label>recipe Name:</label>
+      <input type="text" placeholder="Fried Okra" formControlName="name" required>
+      <ion-text *ngIf="recipeForm.get('name').invalid && recipeForm.get('name').touched" color="danger">Name is
+        required.</ion-text>
+    </div>
+    <div>
+      <label>ethnicity:</label>
+      <input type="text" placeholder="Ghanian" formControlName="ethnicity" required>
+      <ion-text *ngIf="recipeForm.get('ethnicity').invalid && recipeForm.get('ethnicity').touched"
+        color="danger">Ethnicity is required.</ion-text>
+    </div>
+    <div>
+      <label>category:</label>
+      <ion-text *ngIf="recipeForm.get('category').invalid && recipeForm.get('category').touched" color="danger">Category
+        is required.</ion-text>
+      <ion-item style="border: solid 0.5px;">
+        <ion-select formControlName="category" placeholder="{{ 'dinner' | translate }}">
+          <ion-select-option value="Breakfast">{{'breakfast' | translate}}</ion-select-option>
+          <ion-select-option value="Beverages">{{'beverages' | translate}}</ion-select-option>
+          <ion-select-option value="Appetizer">{{'apps' | translate}}</ion-select-option>
+          <ion-select-option value="Dinner">{{'dinner' | translate}}</ion-select-option>
+          <ion-select-option value="Dessert">{{'dessert' | translate}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </div>
+    <div>
+      <label>time:</label>
+      <input type="text" placeholder="20 min" formControlName="time" required>
+      <ion-text *ngIf="recipeForm.get('time').invalid && recipeForm.get('time').touched" color="danger">Time is
+        required.</ion-text>
+
+    </div>
+    <div class="extras">
+      <label>servings:</label>
+      <input type="number" placeholder="8" formControlName="servings" required>
+      <ion-text *ngIf="recipeForm.get('servings').invalid && recipeForm.get('servings').touched" color="danger">Servings
+        are required.</ion-text>
+    </div>
+
+    <hr>
+
+    <div class="extras" formArrayName="ingredients">
+      <label>ingredients:</label>
+      <ion-text *ngIf="recipeForm.get('ingredients').invalid && recipeForm.get('ingredients').touched"
+        color="danger">Ingredients are required.</ion-text>
+      <div *ngFor="let ingredient of recipeForm.get('ingredients').controls; let i = index">
+        <div [formGroup]="ingredient">
+          <input type="text" formControlName="name" placeholder="Ingredient Name" required>
+          <input type="text" formControlName="amount" placeholder="Amount" required>
+          <!-- <input type="text" formControlName="icon" placeholder="Icon (Optional)"> -->
+          <button type="button" *ngIf="recipeForm.get('ingredients').controls.length > 1 && i > 0"
+            (click)="removeIngredient(i)">Remove</button>
+        </div>
+      </div>
+      <button type="button" (click)="addIngredient()">Add Ingredient</button>
+    </div>
+
+    <hr>
+
+    <hr style="border-color: black;">
+    <div class="extras" formArrayName="directions">
+      <label>directions:</label>
+      <ion-text *ngIf="recipeForm.get('directions').invalid && recipeForm.get('directions').touched"
+        color="danger">Directions are required.</ion-text>
+      <div *ngFor="let direction of recipeForm.get('directions').controls; let i = index">
+        <div [formGroup]="direction">
+          <input type="text" formControlName="description" placeholder="Description" required>
+          <input type="text" formControlName="time" placeholder="Time" required>
+          <button type="button" *ngIf="recipeForm.get('directions').controls.length > 1"
+            (click)="removeDirection(i)">Remove</button>
+        </div>
+      </div>
+      <button type="button" (click)="addDirection()">Add Direction</button>
+    </div>
+
+    <hr>
+
+    <label>Upload Pics & Videos</label>
+    <input type="file" accept="image/*, video/*" (change)="onFileChange($event)" multiple>
+    <div formArrayName="pics">
+
+      <div *ngFor="let url of mediaUrls; let i = index">
+        <img [src]="url" width="100" height="100" *ngIf="isImage(url)">
+        <video [src]="url" controls *ngIf="isVideo(url) "></video>
+        <button type="button" (click)="removeMedia(i)">Remove Picture </button>
+      </div>
+    </div>
+
+
+    <button type="submit" [disabled]="recipeForm.invalid && !isEditing">Submit</button>
+    <button type="button" *ngIf="isEditing" (click)="onEditClick()">Edit Recipe</button>
+  </form>
+</ion-content>

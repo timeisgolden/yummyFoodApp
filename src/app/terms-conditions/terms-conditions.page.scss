@@ -1,0 +1,25 @@
+.header_banner {
+      padding-bottom: 0;
+   
+}
+
+.container {
+    padding: 0 20px;
+
+    p {
+        margin: 0;
+        color: var(--text-dark);
+        font-size: 1rem;
+        line-height: 23px;
+        padding-bottom: 23px;
+    }
+
+    h2 {
+        margin: 0;
+        padding-bottom: 23px;
+        color: var(--text-light);
+        font-size: 0.9rem;
+        letter-spacing: 0.4px;
+        font-weight: 400;
+    }
+}

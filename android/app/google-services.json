@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "1081027737093",
+    "project_id": "li-martez",
+    "storage_bucket": "li-martez.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1081027737093:android:39f0b08fd6a779dc144e6c",
+        "android_client_info": {
+          "package_name": "com.ella.kit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1081027737093-dmb5i5d16itiftffb9e818uue88j25p8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ella.kit",
+            "certificate_hash": "044fd040c40bd8a8a2ad957e97395ec1d110acfe"
+          }
+        },
+        {
+          "client_id": "1081027737093-e7j9k64ctid2epasgoibcacolpbh83f4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ella.kit",
+            "certificate_hash": "a8ce3af49295fbfd54ef3c84b5da9f6d9ecf1f35"
+          }
+        },
+        {
+          "client_id": "1081027737093-jv1e9itgrgi9n3avuilnqn95mlumlft9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjz0Q9ifCwwLeeZmSwKn3w8_idbMiB6yI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1081027737093-jv1e9itgrgi9n3avuilnqn95mlumlft9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1081027737093-8g5bvtbp6s0at6mprb56e2rkc2mi0eek.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ella.kit"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

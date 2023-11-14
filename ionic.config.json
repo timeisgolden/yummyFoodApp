@@ -1,0 +1,8 @@
+{
+  "name": "Ella's Kitchen",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}

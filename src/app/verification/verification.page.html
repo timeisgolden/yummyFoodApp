@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start" mode="md">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title></ion-title>
+    </ion-toolbar>
+
+    <div class="header_banner">
+        <div class="text_box">
+            <h2 class="d-flex animate__animated animate__fadeInUp wow" data-wow-duration="0.3s">{{'what_the_code' | translate}}?</h2>
+            <h3 class="animate__animated animate__fadeInUp wow" data-wow-duration="0.35s">
+                {{'enter_the_code_sent_to' | translate}} +1 987 654 3210
+            </h3>
+        </div>
+    </div>
+</ion-header>
+
+<ion-content fullscreen>
+    <div class="form">
+        <ion-list lines="none">
+            <ion-item lines="none">
+                <ion-input class="ion-text-center animate__animated animate__fadeInUp wow" data-wow-duration="0.2s" mode="md" type="tel" value="2" maxlength="1"></ion-input>
+                
+                <ion-input class="ion-text-center animate__animated animate__fadeInUp wow" data-wow-duration="0.25s" mode="md" type="tel" value="4" maxlength="1"></ion-input>
+                
+                <ion-input class="ion-text-center animate__animated animate__fadeInUp wow" data-wow-duration="0.35s" mode="md" type="tel" value="0" maxlength="1"></ion-input>
+                
+                <ion-input class="ion-text-center animate__animated animate__fadeInUp wow" data-wow-duration="0.45s" mode="md" type="tel" value="8" maxlength="1"></ion-input>
+                
+                <ion-input class="ion-text-center animate__animated animate__fadeInUp wow" mode="md" data-wow-duration="0.5s" type="tel" value="1" maxlength="1"></ion-input>
+                
+                <ion-input class="ion-text-center animate__animated animate__fadeInUp wow" mode="md" data-wow-duration="0.55s" type="tel" value="7" maxlength="1"></ion-input>
+            </ion-item>
+            
+            <h4 class="d-flex animate__animated animate__fadeInUp wow" data-wow-duration="0.45s">{{'wrong_number' | translate}}? <span class="end">00:30</span></h4>
+        </ion-list>
+    </div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+    <ion-button size="large" class="btn animate__animated animate__fadeInUp wow" data-wow-duration="0.5s" expand="round" (click)="home()">{{'verify' | translate}}</ion-button>
+</ion-footer>

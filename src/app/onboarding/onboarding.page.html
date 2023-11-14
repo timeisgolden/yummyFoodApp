@@ -1,0 +1,30 @@
+<ion-content fullscreen>
+    <div class="bg-img center_img">
+        <img src="assets/images/food-bg.png" class="crop_img">
+    </div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+    <h2 class="animate__animated animate__fadeInUp wow" data-wow-duration="0.4s">{{'get_started_with' | translate}}
+        Mz. Ella</h2>
+    <p class="animate__animated animate__fadeInUp wow" data-wow-duration="0.45s">
+        <!-- {{'the_quick_drown_fox_jumps_over_alazy_dog' | translate}}.
+        <br>
+        {{'flock_by_when_ax_quiz_prog' | translate}}. -->
+    </p>
+    <ion-button *ngIf="iphone" size="large" fill="outline" class="btn animate__animated animate__fadeInUp wow"
+        data-wow-duration="0.55s" expand="round" (click)="apple()"> <img src="assets/images/apple.png">
+        <span class="text"> {{'apple' | translate}}</span>
+    </ion-button>
+    <ion-button size="large" fill="outline" class="btn animate__animated animate__fadeInUp wow"
+        data-wow-duration="0.55s" expand="round" (click)="google()"> <img src="assets/images/google.png">
+        <span class="text"> {{'continue_with_google' | translate}}</span>
+    </ion-button>
+    <ion-button size="large" class="btn animate__animated animate__fadeInUp wow" data-wow-duration="0.5s" expand="round"
+        (click)="openPopup()">
+        <ion-icon class="zmdi zmdi-smartphone-iphone"></ion-icon>
+        <span class="text">{{'sign_in_with_email' | translate}}</span>
+    </ion-button>
+
+    <div id="firebaseui-auth-container"></div>
+</ion-footer>

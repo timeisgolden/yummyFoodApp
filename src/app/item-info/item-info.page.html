@@ -1,0 +1,145 @@
+<ion-header class="bg_transparent">
+    <ion-toolbar>
+        <ion-buttons slot="start" mode="md">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>
+            <div class="title-inner d-flex">
+                <span class="favorite_icon end" [ngClass]="FavoriteIcon ? 'active' : ''" (click)="toggleFavoriteIcon()">
+                    <ion-icon class="zmdi zmdi-favorite-outline ion-text-center"></ion-icon>
+                    <ion-icon class="zmdi zmdi-favorite ion-text-center"></ion-icon>
+                </span>
+            </div>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content #contentElement fullscreen>
+    <div class="banner">
+        <ion-slides pager="true">
+            <ion-slide *ngFor="let pic of recipe.pics">
+                <div class="img_box center_img">
+                    <img src="{{pic}}" class="crop_img">
+                </div>
+            </ion-slide>
+        </ion-slides>
+    </div>
+
+    <div id="content-inner" class="content-inner">
+        <div class="pullup"></div>
+        <div class="content_header ion-text-center">
+            <div class="text-box">
+                <h2 class="animate__animated animate__fadeInUp wow" data-wow-duration="0.35s">{{recipe.name}}</h2>
+                <h3 class="d-flex animate__animated animate__fadeInUp wow" data-wow-duration="0.4s">
+                    {{recipe.ethnicity}}
+                    <span></span> {{recipe.time}}
+                    <span></span> {{recipe.servings}} Servings
+                </h3>
+            </div>
+
+            <ion-segment class="animate__animated animate__fadeInUp wow" data-wow-duration="0.45s" mode="ios"
+                (ionChange)="segmentChanged()" [(ngModel)]="segment" lines="none">
+                <ion-segment-button mode="ios" value="0">
+                    <ion-label class="ion-text-center">
+                        {{'ingredients' | translate}}
+                    </ion-label>
+                </ion-segment-button>
+                <ion-segment-button mode="ios" value="1">
+                    <ion-label class="ion-text-center">
+                        {{'direction' | translate}}
+                    </ion-label>
+                </ion-segment-button>
+            </ion-segment>
+        </div>
+
+
+        <ion-slides #slides (ionSlideDidChange)="slideChanged()">
+            <!--            ingredients section start-->
+            <ion-slide class="ingredients_list" *ngIf="currDiv == 'ingredients_list'">
+                <ion-list lines="none">
+                    <!-- <h2> {{'total' | translate}} 8 {{'ingredients' | translate}}</h2> -->
+                    <ion-item *ngFor=" let ingredient of recipe.ingredients"
+                        class="animate__animated animate__fadeInUp">
+                        <div class="item-inner d-flex">
+                            <div class="img_box">
+                                <img src="assets/images/Ingredients/ingredient3.png">
+                            </div>
+                            <div class="text_box">
+                                <h3 class="d-flex">
+                                    {{ingredient.name}}
+                                    <span class="end">{{ingredient.amount}}</span>
+                                </h3>
+                            </div>
+                        </div>
+                    </ion-item>
+                </ion-list>
+                <ion-button size="large" fill="outline" class="btn animate__animated animate__fadeInUp wow"
+                    data-wow-duration="0.5s" expand="round" (click)="ShowDiv('ShoppingList')">{{'add_to_shopping_list' |
+                    translate}}</ion-button>
+            </ion-slide>
+
+
+            <ion-slide class="ShoppingList" *ngIf="currDiv == 'ShoppingList'">
+                <ion-list lines="none">
+                    <h2 class="d-flex">{{ '2' | translate }} {{ 'out_of' | translate }} 8 {{ 'ingredient_selected' |
+                        translate }}
+                        <span class="end">{{ 'clear_all' | translate }}</span>
+                    </h2>
+                    <ion-item *ngFor=" let ingredient of recipe.ingredients"
+                        class="animate__animated animate__fadeInUp">
+                        <div class="item-inner d-flex">
+                            <div class="img_box">
+                                <ion-checkbox (ionChange)="onCheckboxChange(ingredient)"
+                                    [(ngModel)]="ingredient.checked"></ion-checkbox>
+                            </div>
+                            <div class="text_box">
+                                <h3 class="d-flex">
+                                    {{ingredient.name}}
+                                    <span class="end">{{ingredient.amount}}</span>
+                                </h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+
+                </ion-list>
+                <ion-button *ngIf="groceryList.length > 0" size="large"
+                    class="btn animate__animated animate__fadeInUp wow" data-wow-duration="0.5s" expand="round"
+                    (click)="addGroceries()">{{'add' | translate}} ( {{groceryList.length}}
+                    {{'items' |
+                    translate}})</ion-button>
+                <ion-button *ngIf="groceryList.length == 0" size="large"
+                    class="btn animate__animated animate__fadeInUp wow" data-wow-duration="0.5s" expand="round"
+                    (click)="ShowDiv('ingredients_list')">Cancel</ion-button>
+            </ion-slide>
+            <!--            ingredients section end-->
+
+
+            <!--            direction section start-->
+            <ion-slide class="direction">
+                <ion-list style="padding: 1.5rem" lines="none">
+                    <h2 class="dflex">{{recipe.directions.length}} {{'step_cooking_proess' |
+                        translate}}
+                        <span class="end">{{recipe.time}}</span>
+                    </h2>
+                    <div class="animate__animated animate__fadeInUp">
+                        <div style="color: gray;" *ngFor="let direction of recipe.directions; let i = index"
+                            class="item-inner">
+                            <h3>'{{ 'step' | translate }} {{ i + 1 }} / {{ recipe.directions.length }}'
+                                <!-- <span class="end">{{ direction.time }}</span> -->
+                            </h3>
+                            <p>
+                                {{ direction.description }}
+                            </p>
+                        </div>
+                    </div>
+
+
+                </ion-list>
+                <!-- <ion-button size="large" class="btn animate__animated animate__fadeInUp wow" data-wow-duration="0.5s"
+                    expand="round" (click)="start_cooking()">{{'start_cooking' | translate}}</ion-button> -->
+            </ion-slide>
+            <!--            direction section end-->
+        </ion-slides>
+    </div>
+</ion-content>

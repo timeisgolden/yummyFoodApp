@@ -1,0 +1,72 @@
+/* chef.page.scss */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--bg-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    input {
+
+        background: wheat;
+    }
+}
+
+div {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--text-dark);
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    font-size: 14px;
+    // color: var(--text-dark);
+}
+
+.extras {
+
+    margin-bottom: 2rem;
+}
+
+button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: var(--primary);
+    color: var(--white);
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button[disabled] {
+    background-color: var(--text-light);
+    cursor: not-allowed;
+}
+
+img,
+video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-top: 5px;
+}
+
+/* Optional: Styling for errors */
+.ng-invalid.ng-touched input,
+.ng-invalid.ng-touched textarea {
+    border-color: var(--red_color);
+}

@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      User Authentication
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closePopup()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-segment [(ngModel)]="activeSegment">
+    <ion-segment-button value="signup">
+      Sign Up
+    </ion-segment-button>
+    <ion-segment-button value="signin">
+      Sign In
+    </ion-segment-button>
+  </ion-segment>
+
+  <div *ngIf="activeSegment === 'signup'">
+    <ion-item>
+      <ion-label position="floating">First Name</ion-label>
+      <ion-input [(ngModel)]="signupData.fName" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Last Name</ion-label>
+      <ion-input [(ngModel)]="signupData.lName" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input [(ngModel)]="signupData.email" type="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input [(ngModel)]="signupData.password" type="password"></ion-input>
+    </ion-item>
+    <ion-button expand="full" (click)="submitSignup()">Sign Up</ion-button>
+  </div>
+
+  <div *ngIf="activeSegment === 'signin'">
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input [(ngModel)]="signinData.email" type="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input [(ngModel)]="signinData.password" type="password"></ion-input>
+    </ion-item>
+    <ion-button expand="full" (click)="submitSignin()">Sign In</ion-button>
+  </div>
+</ion-content>

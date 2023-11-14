@@ -1,0 +1,61 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button icon="">
+                <ion-icon class="zmdi zmdi-sort-amount-desc"></ion-icon>
+            </ion-menu-button>
+        </ion-buttons>
+        <ion-title></ion-title>
+    </ion-toolbar>
+
+    <div class="header_banner">
+        <div class="text_box">
+            <h2 class="d-flex animate__animated animate__fadeInUp wow" data-wow-duration="0.3s">
+                {{'we_are_happy_to' | translate}}<br>
+                {{'hear_from_you' | translate}} !!
+            </h2>
+            <h3 class="animate__animated animate__fadeInUp wow" data-wow-duration="0.35s">
+                {{'let_us_know_your_queries_feedbacks' | translate}}
+            </h3>
+            <!-- 
+            <ion-row class="animate__animated animate__fadeInUp wow" data-wow-duration="0.35s">
+                <ion-col size="6">
+                    <ion-button fill="outline" size="large" class="btn call_us" expand="round">
+                        <ion-icon class="zmdi zmdi-phone"></ion-icon>
+                        {{'call_us' | translate}}
+                    </ion-button>
+                </ion-col>
+
+                <ion-col size="6">
+                    <ion-button size="large" class="btn" expand="round">
+                        <ion-icon class="zmdi zmdi-email"></ion-icon>
+                        {{'mail_us' | translate}}
+                    </ion-button>
+                </ion-col>
+
+            </ion-row> -->
+        </div>
+    </div>
+</ion-header>
+
+<ion-content fullscreen>
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <ion-item lines="none" class="animate__animated animate__fadeInUp wow" data-wow-duration="0.3s">
+            <ion-label position="floating">{{'full_name' | translate}}</ion-label>
+            <ion-input formControlName="full_name" mode="md" type="text"></ion-input>
+        </ion-item>
+        <ion-item lines="none" class="animate__animated animate__fadeInUp wow" data-wow-duration="0.45s">
+            <ion-label position="floating">{{'email_address' | translate}}</ion-label>
+            <ion-input formControlName="email_address" mode="md" type="email"></ion-input>
+        </ion-item>
+        <ion-item lines="none" class="animate__animated animate__fadeInUp wow" data-wow-duration="0.4s">
+            <ion-label position="floating">{{'message' | translate}}</ion-label>
+            <ion-textarea formControlName="message" rows="4" auto-grow="false" mode="md" type="text"></ion-textarea>
+        </ion-item>
+
+        <ion-button type="submit" expand="full" shape="round">Submit</ion-button>
+        <ion-button (click)="delete()" expand="full" shape="round">Delete Account</ion-button>
+
+    </form>
+
+</ion-content>

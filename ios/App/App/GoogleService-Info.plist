@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1081027737093-8g5bvtbp6s0at6mprb56e2rkc2mi0eek.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1081027737093-8g5bvtbp6s0at6mprb56e2rkc2mi0eek</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>1081027737093-be1mfek1r61oadffi0c1p5ccbb1tr9bi.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBWM-djV5WstZDK-qembkGN-KaPgO_U5GY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1081027737093</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.ella.kit</string>
+	<key>PROJECT_ID</key>
+	<string>li-martez</string>
+	<key>STORAGE_BUCKET</key>
+	<string>li-martez.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1081027737093:ios:5ff08e8ca050408c144e6c</string>
+</dict>
+</plist>

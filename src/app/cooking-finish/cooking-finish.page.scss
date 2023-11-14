@@ -1,0 +1,76 @@
+ion-content {
+    background-size: cover;
+    background-repeat: no-repeat;
+    --background: #fff url('../../assets/images/bg-cooking-finish.png') no-repeat center center / cover!important;
+}
+
+.take_a_photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+    color: var(--white);
+    background: rgb(168 168 168 / 52%);
+    backdrop-filter: saturate(206%) blur(15px);
+    padding: 27px 10px;
+    border-radius: 20px;
+    min-width: 110px;
+    box-shadow: 0 0px 24px 1px rgb(0 0 0 / 36%);
+
+    ion-icon {
+        font-size: 2rem;
+        margin-bottom: 4px;
+    }
+
+    h2 {
+        margin: 0;
+        font-size: .8rem;
+        font-weight: 400;
+    }
+}
+
+ion-footer {
+    padding: 20px;
+    padding-bottom: 15px;
+    color: var(--white);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(148, 187, 233, 0) 100%) !important;
+
+    h2 {
+        margin: 0;
+        font-size: 2rem;
+        font-weight: 500;
+        padding-bottom: 15px;
+    }
+
+    p {
+        margin: 0;
+        padding-bottom: 30px;
+
+        span {
+            display: block;
+            font-size: .85rem;
+            line-height: 20px;
+            letter-spacing: .5px;
+        }
+    }
+
+    .social_icons {
+        margin: 0 auto;
+        width: fit-content;
+        padding-bottom: 15px;
+
+        .icon_box {
+            width: 38px;
+            margin: 0 8px
+        }
+    }
+
+    .button.btn.button-clear {
+        letter-spacing: 1.5px !important;
+        font-weight: 600;
+    }
+}
